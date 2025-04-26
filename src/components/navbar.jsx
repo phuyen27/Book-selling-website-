@@ -23,6 +23,9 @@ const Navbar = () => {
       top: element.offsetTop, // Đến vị trí phần tử
       behavior: 'smooth' // Cuộn mượt mà
     });
+
+    // Cập nhật URL mà không reload trang
+    window.history.pushState(null, "", href);
   }
 
   return (

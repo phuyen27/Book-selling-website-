@@ -6,7 +6,8 @@ import Shop from './components/shop'
 import About from './components/about'
 import BookOpenCard from './components/BookOpenCard'
 import Authors from './components/authors'
-
+import Contact from './components/contact'
+import Footer from './components/footer'
 function App() {
   return (
     <main className='relative min-h-screen overflow-x-hidden'>
@@ -17,7 +18,8 @@ function App() {
         <About/>
         <Authors/>
         <Shop/>
-       
+        <Contact/>
+        <Footer/>
       </div>
     </main>
   )
