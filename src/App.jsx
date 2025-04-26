@@ -3,7 +3,7 @@ import './App.css'
 import Navbar from './components/navbar'
 import Hero from './components/hero'
 import Shop from './components/shop'
-
+import About from './components/about'
 function App() {
   return (
     <main className='relative min-h-screen overflow-x-hidden'>
@@ -14,7 +14,9 @@ function App() {
       <div className='overflow-visible'>
         <Navbar/>
         <Hero/>
+        <About/>
         <Shop/>
+
       </div>
     </main>
   )
