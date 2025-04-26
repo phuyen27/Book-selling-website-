@@ -15,7 +15,7 @@ const Shop = () => {
             title: value.title,
             author: value.author,
             price: value.price,
-            image: value.image
+            image: value.image,
           }))
         : [];
       setBooks(productArray);
@@ -25,40 +25,37 @@ const Shop = () => {
   }, []);
 
   return (
-    <div className="px-4 py-16 max-w-6xl mx-auto" id="#shop">
-      <h1 className="text-3xl md:text-4xl font-bold text-center text-green-700 mb-12">
-        📚 Our Book Collection
+    <section className="px-4 py-20 max-w-7xl mx-auto " id="shop">
+      <h1 className="text-4xl font-extrabold text-center text-amber-900 mb-4">
+        📖 Our Cozy Book Corner
       </h1>
+      <p className="text-center text-stone-700 mb-12 max-w-xl mx-auto">
+        Browse through our warm collection of hand-picked titles perfect for every mood and mind.
+      </p>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+      {/* Danh sách sách */}
+      <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
         {books.map((book) => (
           <div
             key={book.id}
-            className="bg-green-50 rounded-xl shadow hover:shadow-2xl hover:brightness-105 transition-all duration-300 overflow-hidden group"
+            className="bg-[#e8ded1] rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition duration-300 flex flex-col"
           >
             <img
               src={book.image}
               alt={book.title}
-              className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+              className="w-full h-60 object-cover"
             />
-
-            <div className="p-3">
-              <h2 className="text-sm font-semibold text-gray-800 group-hover:text-green-700 transition-colors">
-                {book.title}
-              </h2>
-              <p className="text-xs text-gray-500 italic mt-1">{book.author}</p>
-              <p className="text-base font-bold text-green-700 mt-2">
-                {book.price.toLocaleString()}đ
-              </p>
-
-              <button className="mt-3 w-full flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg transition-colors text-sm">
-                Add to Cart
-              </button>
+            <div className="p-4 flex-1 flex flex-col">
+              <h2 className="text-lg font-semibold text-amber-800 mb-1">{book.title}</h2>
+              <p className="text-sm text-stone-600 mb-2 italic">by {book.author}</p>
+              <div className="mt-auto">
+                <p className="text-lg font-bold text-amber-700">${book.price}</p>
+              </div>
             </div>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
