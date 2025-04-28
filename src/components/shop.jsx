@@ -25,31 +25,37 @@ const Shop = () => {
   }, []);
 
   return (
-    <section className="px-4 py-20 max-w-7xl mx-auto " id="shop">
-      <h1 className="text-4xl font-extrabold text-center text-amber-900 mb-4">
-        📖 Our Cozy Book Corner
+    <section className="px-4 py-20 max-w-7xl mx-auto" id="shop">
+      <h1 className="text-4xl font-bold text-center text-amber-900 mb-4">
+        📚 Explore Our Book Collection
       </h1>
-      <p className="text-center text-stone-700 mb-12 max-w-xl mx-auto">
-        Browse through our warm collection of hand-picked titles perfect for every mood and mind.
+      <p className="text-center text-stone-600 mb-12 max-w-xl mx-auto text-lg">
+        Carefully curated books to feed your curiosity, imagination, and soul.
       </p>
 
-      {/* Danh sách sách */}
-      <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+      <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         {books.map((book) => (
           <div
             key={book.id}
-            className="bg-[#e8ded1] rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition duration-300 flex flex-col"
+            className="bg-white border border-stone-200 rounded-xl shadow-sm hover:shadow-xl transition duration-300 overflow-hidden flex flex-col"
           >
-            <img
-              src={book.image}
-              alt={book.title}
-              className="w-full h-60 object-cover"
-            />
+            <div className="overflow-hidden">
+              <img
+                src={book.image}
+                alt={book.title}
+                className="cursor-pointer w-full h-64 object-cover transform hover:scale-105 transition-transform duration-300"
+              />
+            </div>
             <div className="p-4 flex-1 flex flex-col">
-              <h2 className="text-lg font-semibold text-amber-800 mb-1">{book.title}</h2>
-              <p className="text-sm text-stone-600 mb-2 italic">by {book.author}</p>
-              <div className="mt-auto">
-                <p className="text-lg font-bold text-amber-700">${book.price}</p>
+              <h2 className="text-lg font-semibold text-gray-900 mb-1">
+                {book.title}
+              </h2>
+              <p className="text-sm text-stone-500 italic mb-3">by {book.author}</p>
+              <div className="mt-auto flex items-center justify-between">
+                <span className="text-amber-700 font-bold text-lg">${book.price}</span>
+                <button className="cursor-pointer text-sm text-white bg-amber-600 hover:bg-amber-700 px-3 py-1.5 rounded-md transition-all">
+                  Add to cart
+                </button>
               </div>
             </div>
           </div>

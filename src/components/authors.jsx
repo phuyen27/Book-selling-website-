@@ -21,7 +21,7 @@ const authors = [
 
 const Authors = () => {
   return (
-    <section id="author" className="bg-[#fefaf6] py-16 px-4 sm:px-6 lg:px-8">
+    <section id="author" className=" py-16 px-4 sm:px-6 lg:px-8">
       <h1 className="text-3xl md:text-4xl font-bold text-[#5a3826] text-center mb-6">
         ✨ Featured Authors
       </h1>
@@ -43,15 +43,15 @@ const Authors = () => {
           <motion.div
             key={index}
             className="bg-white border border-[#ecd9c6] rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300"
-            initial={{ opacity: 0, y: 30 }} // Mới load thì opacity 0 và y = 30
-            animate={{ opacity: 1, y: 0 }} // Sau khi load thì opacity = 1 và y = 0
-            transition={{ delay: index * 0.2, duration: 0.8, type: "spring" }} // Độ trễ và animation mượt
+            initial={{ opacity: 0, y: 30 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ delay: index * 0.2, duration: 0.8, type: "spring" }} 
           >
             <div className="overflow-hidden">
               <img
                 src={author.image}
                 alt={author.name}
-                className="w-full h-72 object-cover transform transition-transform duration-300 hover:-translate-y-2"
+                className="cursor-pointer w-full h-72 object-cover transform transition-transform duration-300 hover:-translate-y-2"
               />
             </div>
             <div className="p-4 text-center">

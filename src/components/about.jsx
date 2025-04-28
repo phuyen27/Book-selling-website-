@@ -28,7 +28,7 @@ const features = [
 
 const About = () => {
   return (
-    <section id="about" className="container mx-auto flex flex-col-reverse md:flex-row justify-between items-center pt-44 pb-20 px-4 sm:px-6 lg:px-8 bg-orange-50">
+    <section id="about" className="container mx-auto flex flex-col-reverse md:flex-row justify-between items-center pt-44 pb-20 px-4 sm:px-6 lg:px-8">
       
       {/* Left side */}
       <motion.div
