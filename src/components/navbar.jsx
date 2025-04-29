@@ -17,14 +17,11 @@ const Navbar = () => {
   ]
 
   const handleScroll = (href) => {
-    // Khi click vào link, scroll mượt mà đến phần tương ứng
-    const element = document.getElementById(href.slice(1)); // Cắt bỏ dấu # và tìm phần tử với ID tương ứng
+    const element = document.getElementById(href.slice(1));
     window.scrollTo({
-      top: element.offsetTop, // Đến vị trí phần tử
-      behavior: 'smooth' // Cuộn mượt mà
+      top: element.offsetTop,
+      behavior: 'smooth'
     });
-
-    // Cập nhật URL mà không reload trang
     window.history.pushState(null, "", href);
   }
 
@@ -49,15 +46,15 @@ const Navbar = () => {
         </button>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-10">
+        <div className="ml-auto hidden md:flex items-center gap-10">
           {NavLinks.map((link, index) => (
             <a
               key={index}
               href={link.href}
               onClick={(e) => {
-                e.preventDefault(); // Ngừng hành động mặc định của <a>
-                setActiveLink(link.href); // Cập nhật active link
-                handleScroll(link.href); // Cuộn mượt mà
+                e.preventDefault()
+                setActiveLink(link.href)
+                handleScroll(link.href)
               }}
               className={`text-sm font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 
                 hover:text-orange-900 after:w-0 hover:after:w-full after:bg-amber-400 after:transition-all
@@ -66,13 +63,11 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
+
+         
         </div>
 
-        {/* CTA Button */}
-        <button className="hidden md:block bg-amber-700 text-white px-6 py-2.5 rounded-lg hover:bg-amber-800 text-sm
-            font-medium transition-all hover:shadow-lg hover:shadow-amber-200">
-          <a href="#newsletter">Get in touch</a>
-        </button>
+        
       </div>
 
       {/* Mobile Menu */}
@@ -84,9 +79,9 @@ const Navbar = () => {
                 key={index}
                 href={link.href}
                 onClick={(e) => {
-                  e.preventDefault(); // Ngừng hành động mặc định của <a>
-                  setActiveLink(link.href); // Cập nhật active link
-                  handleScroll(link.href); // Cuộn mượt mà
+                  e.preventDefault()
+                  setActiveLink(link.href)
+                  handleScroll(link.href)
                 }}
                 className={`block text-sm font-medium py-2 ${activeLinks === link.href
                   ? "text-orange-900"
