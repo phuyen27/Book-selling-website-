@@ -16,7 +16,13 @@ const Hero = () => {
           initial="hidden"
           whileInView="show"
         >
-          <div className="flex items-center gap-2 w-fit px-4 py-2 rounded-4xl bg-orange-100 hover:bg-orange-200 transition-colors cursor-pointer group">
+          <div onClick={() => {
+          const shopSection = document.getElementById('shop');
+          if (shopSection) {
+            shopSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }}
+          className="flex items-center gap-2 w-fit px-4 py-2 rounded-4xl bg-orange-100 hover:bg-orange-200 transition-colors cursor-pointer group">
             <FaBookOpen className="text-amber-700 w-5 h-5 group-hover:scale-110 transition-transform" />
             <span className="text-sm font-medium text-orange-900">
               Let's go shop
@@ -49,14 +55,8 @@ const Hero = () => {
           got you covered.
         </motion.p>
 
-        <motion.button
-          variants={fadeIn('right', 0.1)}
-          initial="hidden"
-          whileInView="show"
-          className="bg-amber-700 text-white px-6 py-3 rounded-lg hover:bg-amber-800 transition-all"
-        >
-          Shop Now
-        </motion.button>
+          
+
       </div>
 
       {/* Right Column */}

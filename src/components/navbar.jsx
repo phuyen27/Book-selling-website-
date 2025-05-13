@@ -13,7 +13,7 @@ const Navbar = () => {
     { href: "#about", label: "About us" },
     { href: "#author", label: "Authors" },
     { href: "#shop", label: "Shop" },
-    { href: "#testimonials", label: "Testimonials" },
+    { href: "#blog", label: "Blog" },
   ]
 
   const handleScroll = (href) => {
